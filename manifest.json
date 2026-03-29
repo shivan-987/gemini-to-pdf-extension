@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini to PDF Study Notes Exporter",
+  "version": "1.0",
+  "description": "Export your Google Gemini chat conversations securely to structured, dark-mode PDF study notes.",
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://gemini.google.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Export Chat to PDF"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gemini.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+      ],
+      "matches": [
+        "https://gemini.google.com/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
